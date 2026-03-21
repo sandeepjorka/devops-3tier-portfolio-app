@@ -15,7 +15,7 @@ services:
       - mongodb
 
   frontend:
-    build: ./portfolio-app
+    build: ./frontend
     ports:
       - "3000:80"
     depends_on:
