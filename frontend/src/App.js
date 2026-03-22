@@ -31,7 +31,7 @@ function App() {
 
       {/* Navbar */}
       <nav className="navbar">
-        <h2>Jorka Sandeep Kumar</h2>
+        <h2>Jorka Sandeep </h2>
         <div className="nav-links">
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
