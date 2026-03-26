@@ -17,7 +17,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost:5000/contact", {
+    await fetch("http://13.51.234.214:5000/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form)
@@ -31,7 +31,7 @@ function App() {
 
       {/* Navbar */}
       <nav className="navbar">
-        <h2>Jorka Sandeep </h2>
+        <h2>Jorka Sandeep kumar</h2>
         <div className="nav-links">
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
