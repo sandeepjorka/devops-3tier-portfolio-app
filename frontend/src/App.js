@@ -17,7 +17,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch("http://13.51.234.214:5000/contact", {
+    await fetch("http://localhost:5000/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form)
