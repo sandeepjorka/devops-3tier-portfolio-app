@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+
+files:
+  - source: backend/
+    destination: /home/ubuntu/backend
+
+hooks:
+  BeforeInstall:
+    - location: Deployment_Scripts/before_install.sh
+      timeout: 300
+      runas: root
+
+  AfterInstall:
+    - location: Deployment_Scripts/after_install.sh
+      timeout: 300
+      runas: root
+
+  ApplicationStart:
+    - location: Deployment_Scripts/application_start.sh
+      timeout: 300
+      runas: root
