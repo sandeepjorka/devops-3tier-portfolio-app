@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+
+  build:
+    commands:
+      - echo "Backend build started"
+      - cd backend
+      - npm install
+      - npm run build || echo "No build script found"
+
+artifacts:
+  files:
+    - appspec.yml
+    - Deployment_Scripts/**/*
+    - backend/**/*
