@@ -16,7 +16,4 @@ phases:
       - aws s3 cp backend-app.zip s3://sandeep-devops-artifacts-jorka-2026/backend-app.zip
 
       - echo "Triggering CodeDeploy"
-      - aws deploy create-deployment \
-          --application-name backend-app \
-          --deployment-group-name backend-dg \
-          --s3-location bucket=sandeep-devops-artifacts-jorka-2026,key=backend-app.zip,bundleType=zip
+      - aws deploy create-deployment --application-name backend-app --deployment-group-name backend-dg --s3-location bucket=sandeep-devops-artifacts-jorka-2026,key=backend-app.zip,bundleType=zip
