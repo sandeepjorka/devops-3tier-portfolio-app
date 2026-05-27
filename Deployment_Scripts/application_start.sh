@@ -1,11 +1,10 @@
 #!/bin/bash
+set -e
 
-echo "===== APPLICATION START ====="
+echo "===== APPLICATION START STARTED ====="
 
 cd /home/ubuntu/backend
 
-pm2 stop backend || true
-pm2 delete backend || true
+pm2 restart backend || pm2 start server.js --name backend
 
-pm2 start npm --name backend -- start
-pm2 save
+echo "===== APPLICATION START COMPLETED ====="
