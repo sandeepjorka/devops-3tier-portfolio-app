@@ -4,7 +4,21 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+/* CORS */
+const allowedOrigins = [
+    'https://master.d3zq8gdcn7z7c.amplifyapp.com',
+    'https://sandeep1.xyz',
+    'https://www.sandeep1.xyz'
+];
+
+app.use(cors({
+    origin: allowedOrigins,
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type']
+}));
+
+app.options('*', cors());
+
 app.use(express.json());
 
 /* Health check */
@@ -21,8 +35,8 @@ app.get('/health', (req, res) => {
 
 /* MongoDB Connection */
 mongoose.connect('mongodb://127.0.0.1:27017/portfolioDB')
-  .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log("MongoDB Error:", err));
+    .then(() => console.log("MongoDB Connected"))
+    .catch(err => console.log("MongoDB Error:", err));
 
 /* Schema */
 const ContactSchema = new mongoose.Schema({
