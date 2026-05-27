@@ -7,10 +7,22 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+/* Health check */
+app.get('/', (req, res) => {
+    res.send("Backend is running");
+});
+
+app.get('/health', (req, res) => {
+    res.json({
+        status: "OK",
+        message: "Backend healthy"
+    });
+});
+
 /* MongoDB Connection */
-mongoose.connect('mongodb://mongodb:27017/portfolioDB')
+mongoose.connect('mongodb://127.0.0.1:27017/portfolioDB')
   .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
+  .catch(err => console.log("MongoDB Error:", err));
 
 /* Schema */
 const ContactSchema = new mongoose.Schema({
